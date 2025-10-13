@@ -11,7 +11,7 @@ st.set_page_config(
     page_icon="🤖",
     layout="centered",
 )
-st.title("💬 Generative AI Chatbot")
+st.title("💬 Welcome to Nischith's personal Generative AI Chatbot")
 
 
 # initiate chat history
@@ -52,3 +52,4 @@ if user_prompt:
 # get response from llm
 # save response in chat history
 # display llm response on screen
+
