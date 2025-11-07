@@ -2,10 +2,8 @@ from dotenv import load_dotenv
 import streamlit as st
 from langchain_groq import ChatGroq
 
-# load the env variables
 load_dotenv()
 
-# streamlit page setup
 st.set_page_config(
     page_title="Chatbot",
     page_icon="🤖",
@@ -14,22 +12,20 @@ st.set_page_config(
 st.title("💬 Welcome to Generative AI Chatbot")
 
 
-# initiate chat history
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
-# show chat history on the screen
+
 for message in st.session_state.chat_history:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-# llm initiate
+
 llm = ChatGroq(
     model="llama-3.3-70b-versatile",
     temperature=0.0,
 )
 
-# input box
 user_prompt = st.chat_input("Ask chatbot.....")
 
 if user_prompt:
@@ -45,12 +41,7 @@ if user_prompt:
     with st.chat_message("assistant"):
         st.markdown(assistant_response)
 
-# user prompt
-# display user query
-# save it to chat history
-# send the chat history in llm
-# get response from llm
-# save response in chat history
-# display llm response on screen
+
+
 
 
